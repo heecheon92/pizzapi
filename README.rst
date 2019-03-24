@@ -29,6 +29,12 @@ Then, find a store that will deliver to the address.
 .. code-block:: python
 
     store = address.closest_store()
+    
+To get the actual information about the store.
+
+.. code-block:: python
+
+    print(store)
 
 In order to add items to your order, you'll need the items' product codes.
 To find the codes, get the menu from the store, then search for items you want to add.
@@ -37,6 +43,7 @@ You can do this by asking your ``Store`` object for its ``Menu``.
 .. code-block:: python
 
     menu = store.get_menu()
+    menu.display() # To retrieve all the items from the menu
 
 Then search ``menu`` with ``menu.search``. For example, running this command:
 
