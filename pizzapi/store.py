@@ -23,3 +23,10 @@ class Store(object):
         response = request_json(self.urls.menu_url(), store_id=self.id, lang=lang)
         menu = Menu(response, self.country)
         return menu
+
+    def __str__(self):
+        return "Store #{} \n\rAddress: {}\n\nOpen Now: {}".format(
+                self.id,
+                self.data["AddressDescription"],
+                "Yes" if self.data.get("IsOpen", False) else "No",
+                )
